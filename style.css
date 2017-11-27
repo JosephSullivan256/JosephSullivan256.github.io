@@ -1,0 +1,108 @@
+body {
+    background-image: url("patterns/shattered.png");
+    background-repeat: repeat-y;
+    margin: 0px;
+    padding: 0px;
+}
+
+.pagination {
+    margin: 0px;
+    top: 0;
+    /*position: fixed;*/
+    font-family: "Helvetica", sans-serif;
+    font-size: 1.25em;
+    /*font-weight: bold;*/
+    width: 100%;
+    background-color: #d3352a;
+    display: inline-block;
+}
+
+.pagination a {
+    color: white;
+    float: left;
+    padding: 16px 32px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.pagination a.active {
+    background-color: white;
+    color: black;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+    color: darkgray;
+}
+
+.fit {
+    margin: 0px;
+    width: 100%;
+}
+
+.slider-holder {
+    width: 100%;
+    /*height: 400px;*/
+    background-color: yellow;
+    /*margin-left: auto;
+    margin-right: auto;*/
+    margin-top: 0px;
+    text-align: center;
+    overflow: hidden;
+}
+    
+.image-holder {
+    width: 300%;
+    background-color: red;
+    /*height: 400px;*/
+    clear: both;
+    position: relative;
+    
+    -webkit-transition: left 2s;
+    -moz-transition: left 2s;
+    -o-transition: left 2s;
+    transition: left 2s;
+}
+
+.slider-image {
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    width: 33.333333%;
+    position: relative;
+}
+        
+#slider-image-1:target ~ .image-holder {
+    left: 0px;
+}
+        
+#slider-image-2:target ~ .image-holder {
+    left: -100%;
+}
+
+#slider-image-3:target ~ .image-holder {
+    left: -200%;
+}
+
+.button-holder {
+    position: relative;
+    top: -20px;
+}
+
+.slider-change {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border-radius: 5px;
+    background-color: brown;
+}
+
+.footer {
+    margin-top: 4%;
+    padding: 2%;
+    width: 100%;
+    background-color: #301010;
+    color: white;
+    font-family: "Helvetica", sans-serif;
+    font-size: 0.75em;
+}
