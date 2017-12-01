@@ -1,24 +1,30 @@
-body {
-    background-image: url("patterns/shattered.png");
-    background-repeat: repeat-y;
+﻿body {
+    /*background-image: url("patterns/shattered.png");
+    background-repeat: repeat-y;*/
+    color: #ffffff;
     margin: 0px;
     padding: 0px;
+}
+
+.contentHolder {
+    padding-left: 20%;
+    padding-right: 20%;
 }
 
 .pagination {
     margin: 0px;
     top: 0;
-    /*position: fixed;*/
-    font-family: "Helvetica", sans-serif;
+    position: fixed;
+    font-family: "Georgia", serif;
     font-size: 1.25em;
-    /*font-weight: bold;*/
+    z-index: 99 !important;
     width: 100%;
-    background-color: #d3352a;
+    background-color: #ffffff;
     display: inline-block;
 }
 
 .pagination a {
-    color: white;
+    color: darkgray;
     float: left;
     padding: 16px 32px;
     text-decoration: none;
