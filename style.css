@@ -17,7 +17,7 @@
     position: fixed;
     font-family: "Georgia", serif;
     font-size: 1.25em;
-    z-index: 99 !important;
+    z-index: 99;
     width: 100%;
     background-color: #ffffff;
     display: inline-block;
