@@ -3,11 +3,9 @@ window.addEventListener('load', function() {
 }, true);
 
 function initScrollAnchors(){
-	console.log("HI");
 	var anchors = document.getElementsByClassName("scroll-anchor");
 	for(var i=0; i < anchors.length; i++){
 		initScrollAnchor(anchors[i]);
-		console.log("HI");
 	}
 }
 
