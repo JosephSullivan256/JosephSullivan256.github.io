@@ -23,8 +23,12 @@ function initScrollAnchor(anchor){
 function scrollToSmoothly(previousScroll, position, speed){
 	var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
 	var newScroll = position*speed+currentScroll*(1-speed);
+	if(Math.abs(newScroll - currentScroll) < 5){
+		speed=Math.pow(speed,0.9);
+		newScroll = position*speed+currentScroll*(1-speed);
+	}
 	if(previousScroll!=currentScroll){
-		if(Math.abs(newScroll-position) < 10){
+		if(Math.abs(newScroll-position) < 4){
 			document.documentElement.scrollTop = document.body.scrollTop = position;
 			enableScroll();
 		} else {
