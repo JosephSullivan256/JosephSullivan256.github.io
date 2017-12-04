@@ -17,7 +17,6 @@ function initScrollAnchor(anchor){
 	anchor.addEventListener("click", function() {
 		disableScroll();
 		scrollToSmoothly(position, speed);
-		enableScroll();
 	}, true);
 }
 
@@ -26,6 +25,7 @@ function scrollToSmoothly(position, speed){
 	var newScroll = position*speed+currentScroll*(1-speed);
 	if(Math.abs(newScroll-position) < 10){
 		document.documentElement.scrollTop = document.body.scrollTop = position;
+		enableScroll();
 	} else {
 		document.documentElement.scrollTop = document.body.scrollTop = newScroll;
 		window.requestAnimationFrame(function(){
