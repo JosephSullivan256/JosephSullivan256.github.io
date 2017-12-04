@@ -10,7 +10,7 @@ function initScrollAnchors(){
 }
 
 function initScrollAnchor(anchor){
-	var speed = 0.1;
+	var speed = anchor.getAttribute("speed");
 	var id = anchor.getAttribute("href").substring(1);
 	var dest = document.getElementById(id);
 	var position = dest.getBoundingClientRect().top + window.pageYOffset;/*- dest.ownerDocument.documentElement.clientTop;*/
