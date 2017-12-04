@@ -16,21 +16,25 @@ function initScrollAnchor(anchor){
 	var position = dest.getBoundingClientRect().top + window.pageYOffset;/*- dest.ownerDocument.documentElement.clientTop;*/
 	anchor.addEventListener("click", function() {
 		disableScroll();
-		scrollToSmoothly(position, speed);
+		scrollToSmoothly(-10, position, speed);
 	}, true);
 }
 
-function scrollToSmoothly(position, speed){
+function scrollToSmoothly(previousScroll, position, speed){
 	var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
 	var newScroll = position*speed+currentScroll*(1-speed);
-	if(Math.abs(newScroll-position) < 10){
-		document.documentElement.scrollTop = document.body.scrollTop = position;
-		enableScroll();
+	if(previousScroll!=currentScroll){
+		if(Math.abs(newScroll-position) < 10){
+			document.documentElement.scrollTop = document.body.scrollTop = position;
+			enableScroll();
+		} else {
+			document.documentElement.scrollTop = document.body.scrollTop = newScroll;
+			window.requestAnimationFrame(function(){
+				scrollToSmoothly(currentScroll,position,speed);
+			});
+		}
 	} else {
-		document.documentElement.scrollTop = document.body.scrollTop = newScroll;
-		window.requestAnimationFrame(function(){
-			scrollToSmoothly(position,speed);
-		});
+		enableScroll();
 	}
 }
 
