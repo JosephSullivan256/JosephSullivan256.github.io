@@ -1,0 +1,39 @@
+body {
+    background-image: url("stripes-light/stripes-light.png");
+    background-repeat: repeat-y repeat-x;
+}
+
+.content {
+	text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 600px;
+}
+
+.title {
+	color: #4CAF50;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 3em;
+	font-style: oblique;
+	font-weight: bold;
+}
+
+.buttonBox {
+	
+}
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 5px;
+    cursor: pointer;
+}
